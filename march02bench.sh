@@ -7,7 +7,7 @@ sleep 8;
 #./mutilate -s 10.79.6.24 --loadonly -T 24 &&
 #./mutilate -s 10.79.6.24 `./agents.sh -l hotbox-11..37` --noload -T 24 --binary --scan 20000:200000:20000 -Q 1000 -d 4 -c 4 -t 3 &&
 ./mutilate -s 10.79.6.112:8000 --loadonly -T 24 &&
-./mutilate -s 10.79.6.112:8000 `./agents.sh -l hotbox-11..37` --noload -T 24 --binary --scan 100000:800000:50000 -Q 1000 -d 4 -c 4 -t 3 &&
+./mutilate -s 10.79.6.112:8000 `./agents.sh -l hotbox-11..37` --noload -T 24 --binary --scan 100000:1200000:50000 -Q 1000 -d 4 -c 4 -t 3 
 for i in {1..8..1}
 do
 echo "running $i download threads"; sleep 3;
@@ -17,7 +17,7 @@ sleep 8;
 #./mutilate -s 10.79.6.24 --loadonly -T 24 &&
 #./mutilate -s 10.79.6.24 `./agents.sh -l hotbox-11..37` --noload -T 24 --binary --scan 20000:200000:20000 -Q 1000 -d 4 -c 4 -t 3 &&
 ./mutilate -s 10.79.6.112:8000 --loadonly -T 24 &&
-./mutilate -s 10.79.6.112:8000 `./agents.sh -l hotbox-11..37` --noload -T 24 --binary --scan 100000:800000:50000 -Q 1000 -d 4 -c 4 -t 3 &&
+./mutilate -s 10.79.6.112:8000 `./agents.sh -l hotbox-11..37` --noload -T 24 --binary --scan 100000:1200000:50000 -Q 1000 -d 4 -c 4 -t 3 &&
 ssh greghill@maverick-15 "pkill --signal SIGUSR1 download_client" &
 #ssh greghill@maverick-15 "pkill -9 download_client; ~/public/cleanix2/ix/bench/download_client 10.79.6.24 8000 $i 1 1024 1 1 0" 
 ssh greghill@maverick-15 "pkill -9 download_client; ~/public/cleanix2/ix/bench/download_client 10.79.6.111 8000 $i 1 1024 1 1 0" 
